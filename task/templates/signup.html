@@ -6,19 +6,22 @@
     <title>Document</title>
 </head>
 <body>
+<!-- Your template file -->
+{% extends 'base.html' %}
+{% block content %}
     <div>
-        {{error}}
+        {{ error }}
     </div>
     <div>
         <form action="/signup/" method="post">
             {% csrf_token %} 
-            {{form.as_p}}
+            {{ form.as_p }}
             <button>
                 Signup
             </button>
         </form>
-        
     </div>
-    
+{% endblock %}
+
 </body>
 </html>
